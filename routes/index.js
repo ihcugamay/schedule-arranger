@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
         createdBy: req.user.id
       },
       order: [['"updatedAt"', 'DESC']]
-    }).then((schedules) => {
+    }).then(schedules => {
       res.render('index', {
         title: title,
         user: req.user,
