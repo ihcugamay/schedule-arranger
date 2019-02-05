@@ -1,8 +1,25 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
-    script(src="/javascripts/bundle.js")
+    title= 予定調整くん
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet",
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm",
+    crossorigin="anonymous")
+  b
+    nav.navbar.navber-light.bg-light
+      div.navber-header
+        a(href="/").navber-brand.nav-link 予定調整くん
+      ul.navber-nav
+        if user
+          ul.nav-item
+            a(href="/logout").nav-link #{user.username} をログアウト
+        else
+          ul.nav-item
+            a(href="/login").nav-link ログイン
+    div.container
+      block content
+      script(src="/javascripts/bundle.js")
